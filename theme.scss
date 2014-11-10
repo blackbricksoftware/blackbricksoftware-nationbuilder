@@ -3,13 +3,17 @@
    For changes to the desktop or tablet viewports, see tablet-and-desktop.scss.
    ============================================================================ */
 
+//* imports *//
+@import url(//fonts.googleapis.com/css?family=Alegreya+Sans+SC:500);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
 //* style variables *//
 
 // headline font
-$headline-font: "chaparral-pro", Helvetica, sans-serif;
+$headline-font: "Alegreya Sans SC", Helvetica, sans-serif;
 
 // main font
-$font: "proxima-nova", sans-serif;
+$font: Helvetica, sans-serif;
 
 $theme-color-1: #be984f;
 $theme-color-2: #d7d7d7;
@@ -26,7 +30,11 @@ $green: #619114;
 // background images
 $background-texture: "body-fulvous.jpg";
 $header-texture: "header-fulvous.jpg";
-$header-color: #192123;
+$header-color: #363636;
+
+// menu settings
+$menu-width: 50px;
+$menu-open-width: 250px;
 
 //* main responsive components *//
 
@@ -79,6 +87,14 @@ $header-color: #192123;
 
 .clearfix {
   @include nb-clearfix;
+}
+
+html,
+body,
+body > .pattern,
+body > .pattern > .wrap { 
+	height: 100%; 
+	overflow-y: visible;
 }
 
 html,
@@ -331,7 +347,6 @@ header {
 // if the site has a logo, center it it above content in mobile view
 
 .site-logo {
-  margin-top: 25px;
   header {
     float: none;
     text-align: center;
@@ -339,8 +354,7 @@ header {
     max-width: 100%;
     margin-left: -65px; // sets logo to true center
     img {
-      max-width: 155px;
-      max-height: 100px;
+		width: $menu-width;
     }
   }
 }
@@ -353,14 +367,6 @@ header.splash {
   max-width: 100%;
 }
 
-.site-logo {
-  header.splash {
-    text-align: center;
-    margin-left: 0;
-    max-width: 100%;
-  }
-}
-
 // wraps every page headline
 
 #headline, .headline {
@@ -370,31 +376,36 @@ header.splash {
 // icon which activates off canvas nav
 
 .menu-link {
-  float: left;
   display: block;
   padding: 10px;
-  margin: 25px 20px 0 0;
+  position: absolute;
+  top: 10px;
+  right: 5%;
 }
 
 .menu-link {
+/*
   background-color: $theme-color-3;
   @include border-radius(2px);
-  .icon-menu {
-    color: #fff;
+*/
+  .fa {
+    color: $theme-color-4;
     font-size: 18px;
   }
 }
 
 // off canvas mobile nav
 
+/*
 nav {
   @include mobile-nav;
 }
+*/
 
 // page layout if the sidebar is turned on
 
 .twocolumn-container {
-  margin-top: -30px;
+  margin-top: 0;
   .left-column, .right-column-wide {
     background-color: #fff;
     padding: 20px;
@@ -414,7 +425,7 @@ nav {
   padding: 20px;
   @include border-radius(5px);
   border: 1px solid #ebebeb;
-  margin-top: -30px;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -786,9 +797,30 @@ ul#page-stream {
 // container for entire header area
 
 .header-container {
-  padding-bottom: 40px;
-  min-height: 140px;
-  background: url($header-texture) repeat-x $header-color;
+  padding: 10px 0;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url($header-texture) repeat $header-color;
+  @include transition(all 0.3s ease-out);
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  .width-container {
+    width: 100%;
+    margin: 0;
+  }
+}
+.header-container:hover {
+  width: $menu-open-width;
+}
+
+// container for the entire main area
+#body { 
+	padding: 50px 0;
 }
 
 // site wide footer
@@ -1316,8 +1348,7 @@ ul.membership-list {
 .pattern {
   overflow: hidden;
   & > .wrap {
-  padding-bottom: 20px;
-  left: 0;
+	left: 0;
   }
 }
 
@@ -1327,7 +1358,9 @@ ul.membership-list {
   position: relative;
   @include transition(all 0.3s ease-out);
   &.active {
-    left: 16em;
+    .header-container { 
+		width: $menu-open-width;
+	}
   }
 }
 
@@ -1849,3 +1882,6 @@ ul.homepage_excerpt-list {
     margin: 1em 0;
   }
 }
+
+
+

@@ -33,29 +33,29 @@
 
 </head>
 <body class="aware-theme v2-theme {{ page.page_class_name }} js">
+	
   <div id="pattern" class="pattern">
     <div class="wrap" id="wrap">
       <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
+		  
+  <div class="header-container clearfix {% if site.has_background_image? %}no-background{% endif %}">
+	  <div class="width-container clearfix">
+		  
+		
+		  <div class="site-logo clearfix">
+			<header>
+				<h2>{% if site.has_meta_image? %}<a href="/"><img src="{{ site.meta_image_url }}"> {% endif %}{{ site.long_name }}</a></h2>
+			</header>
+		  </div>
 
-        <div class="header-container clearfix {% if site.has_background_image? %}no-background{% endif %}">
-          <div class="width-container clearfix">
+		{% include "nav" %}
 
-            {% include "nav" %}
-
-            {% if site.has_meta_image? %}
-              <div class="site-logo">
-                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
-              </div>
-            {% else %}
-              <header>
-                <h1 class="title"><a href="/">{{ site.long_name }}</a></h1>
-              </header>
-            {% endif %}
-
-          </div>
-          <!-- .width-container -->
-        </div>
-        <!-- .header-container -->
+	  </div>
+	  <!-- .width-container -->
+	</div>
+	<!-- .header-container -->
+		  
+		{% include "nav-mobile" %}
 
         {% if site.has_header_image? %}
         <div class="width-container">
