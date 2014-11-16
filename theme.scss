@@ -4,8 +4,7 @@
    ============================================================================ */
 
 //* imports *//
-@import url(//fonts.googleapis.com/css?family=Alegreya+Sans+SC:500);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import "settings";
 
 //* style variables *//
 
@@ -31,10 +30,6 @@ $green: #619114;
 $background-texture: "body-fulvous.jpg";
 $header-texture: "header-fulvous.jpg";
 $header-color: #363636;
-
-// menu settings
-$menu-width: 50px;
-$menu-open-width: 250px;
 
 //* main responsive components *//
 
@@ -190,8 +185,7 @@ body {
 }
 
 .width-container {
-  width: 90%;
-  margin: 0 5%;
+  width: 100%;
 }
 
 .no-background {
@@ -338,23 +332,25 @@ body {
 
 // wraps your site name or site logo
 
+/*
 header {
   float: left;
   padding: 28px 0 0 0;
   max-width: 78%;
 }
+*/
 
 // if the site has a logo, center it it above content in mobile view
 
 .site-logo {
-  header {
-    float: none;
-    text-align: center;
-    padding: 0;
-    max-width: 100%;
-    margin-left: -65px; // sets logo to true center
+  header, header.splash {
+    float: left;
+    text-align: left;
+    padding: 0 0 20px 0;
+    margin-left: 0;
     img {
-		width: $menu-width;
+      width: $menu-open-width*$menu-logo-porportion;
+      max-width: none;
     }
   }
 }
@@ -420,6 +416,7 @@ nav {
 
 // page layout if the sidebar is turned off
 
+/*
 .onecolumn-container {
   background-color: #fff;
   padding: 20px;
@@ -428,6 +425,7 @@ nav {
   margin-top: 0;
   margin-bottom: 20px;
 }
+*/
 
 // supporter photo shown in supporter nav and user profile
 
@@ -801,7 +799,7 @@ ul#page-stream {
   height: 100%;
   width: 0;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   background: url($header-texture) repeat $header-color;
@@ -819,9 +817,11 @@ ul#page-stream {
 }
 
 // container for the entire main area
+/*
 #body { 
 	padding: 50px 0;
 }
+*/
 
 // site wide footer
 
@@ -852,6 +852,112 @@ footer {
 }
 
 // supporter nav which is shown if a user is signed in
+
+// top nav with drop downs
+
+nav, .subnav {
+  background-color: transparent;
+  border-right: 0;
+  border-top: 0;
+  height: auto;
+  overflow: hidden;
+  position: static;
+  width: $menu-open-width;
+  .topnav {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    list-style: none;
+    font-size: 14px;
+  }
+  li {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    position: relative;
+    background-color: $theme-color-4;
+    border: 1px solid darken($theme-color-4, 3);
+    line-height: 55px;
+    width: 100%;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: $theme-color-2;
+      padding: 0 0 0 50px;
+      .fa {
+		position: absolute;
+		left: 8px;
+		top: 50%;
+		transform: translate(0,-50%);
+	  }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover, &.active{
+      border-color: transparent;
+      background-color: $theme-color-3;
+      a {
+        color: #fff;
+      }
+    }
+  }
+  /* controls bg color of top when hovering on sub */
+  .sub {
+    position: absolute;
+    top: 54px;
+    left: -1px;
+    z-index: 99999;
+    background-color: $theme-color-3;
+    padding: 8px 0 5px 0;
+    @include border-radius-top-right(2px);
+    @include border-radius-bottom-left(2px);
+    @include border-radius-bottom-right(2px);
+    width: 200px;
+    display: none;
+  }
+  .sub li {
+    width: 100%;
+    border: none;
+    color: $theme-color-2;
+    font-size: 13px;
+    line-height: 18px;
+    display: block;
+    background-color: $theme-color-3;
+    border-color:transparent;
+    @include border-radius(0);
+
+    &.mobile-visible {
+      display: none;
+    }
+  }
+  .sub a {
+    background: none;
+    padding: 5px 20px 5px 22px;
+
+    &:hover {
+      background-color: darken($theme-color-3, 10);
+      text-decoration: none;
+    }
+  }
+}
+
+// navigation shown if a page has more than one subpage
+
+.subnav {
+  margin: 0 0 15px 0;
+  padding: 0;
+  float: left;
+  clear: both;
+  font-size: 13px;
+  max-width: 100%;
+}
+
+.desktop-nav {
+  li:hover .sub {
+    display: block;
+  }
+}
 
 .supporter-nav {
   margin: 0;

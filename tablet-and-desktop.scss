@@ -3,6 +3,9 @@
    For the mobile first stylesheet which applies to all screen widths, see theme.scss.
    =================================================================================== */
 
+//* imports *//
+@import "settings";
+
 //* style variables *//
 
 // headline font
@@ -24,10 +27,6 @@ $green: #619114;
 $background-texture: "body-fulvous.jpg";
 $header-texture: "header-fulvous.jpg";
 
-// menu settings
-$menu-width: 50px;
-$menu-open-width: 250px;
-
 // border-radius mixin
 @import "border_radius";
 
@@ -48,7 +47,6 @@ $menu-open-width: 250px;
 // container for the entire main area
 #body { 
 	margin-left: $menu-width;
-	padding: 30px 0;
 }
 
 // page layout if the sidebar is turned on
@@ -83,26 +81,14 @@ $menu-open-width: 250px;
 
 // wraps your site name or site logo
 
+/*
 header {
   max-width: 27.875243664717%;
   // 286px ÷ 1140px
   float: left;
   padding: 35px 0 20px 30px;
 }
-
-
-.site-logo {
-  header, header.splash {
-    float: left;
-    text-align: left;
-    padding: 0 0 20px 0;
-    max-width: 100%;;
-    margin-left: 0;
-    img {
-      max-width: 100%;
-    }
-  }
-}
+*/
 
 // site wide footer
 
@@ -165,107 +151,6 @@ footer {
 
 .menu-link {
   display: none;
-}
-
-// top nav with drop downs
-
-nav, .subnav {
-  background-color: transparent;
-  border-right: 0;
-  border-top: 0;
-  height: auto;
-  max-width: 100%;
-  overflow: hidden;
-  position: static;
-  width: auto;
-  .topnav {
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style: none;
-    font-size: 14px;
-  }
-  li {
-    display: inline-block;
-    margin: 0 0 10px 0;
-    position: relative;
-    background-color: $theme-color-4;
-    border: 1px solid darken($theme-color-4, 3);
-    line-height: 55px;
-    width: 100%;
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      color: $theme-color-2;
-      padding: 0 15px 0 $menu-width;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-    &:hover, &.active{
-      border-color: transparent;
-      background-color: $theme-color-3;
-      a {
-        color: #fff;
-      }
-    }
-  }
-  /* controls bg color of top when hovering on sub */
-  .sub {
-    position: absolute;
-    top: 54px;
-    left: -1px;
-    z-index: 99999;
-    background-color: $theme-color-3;
-    padding: 8px 0 5px 0;
-    @include border-radius-top-right(2px);
-    @include border-radius-bottom-left(2px);
-    @include border-radius-bottom-right(2px);
-    width: 200px;
-    display: none;
-  }
-  .sub li {
-    width: 100%;
-    border: none;
-    color: $theme-color-2;
-    font-size: 13px;
-    line-height: 18px;
-    display: block;
-    background-color: $theme-color-3;
-    border-color:transparent;
-    @include border-radius(0);
-
-    &.mobile-visible {
-      display: none;
-    }
-  }
-  .sub a {
-    background: none;
-    padding: 5px 20px 5px 22px;
-
-    &:hover {
-      background-color: darken($theme-color-3, 10);
-      text-decoration: none;
-    }
-  }
-}
-
-// navigation shown if a page has more than one subpage
-
-.subnav {
-  margin: 0 0 15px 0;
-  padding: 0;
-  float: left;
-  clear: both;
-  font-size: 13px;
-  max-width: 100%;
-}
-
-.desktop-nav {
-  li:hover .sub {
-    display: block;
-  }
 }
 
 // follow page link shown in page stream
@@ -422,6 +307,7 @@ ul.membership-list {
 
 // page specific styles
 
+/*
 .page-user-sessions-new-wide, .page-users-accounts-new-wide, .page-users-password-resets-new-wide, .page-users-passwords-new-wide {
   .onecolumn-container {
     margin: 0 auto;
@@ -434,6 +320,7 @@ ul.membership-list {
     width: 75%;
   }
 }
+*/
 
 .page-pages-show-voter-registration .iframe-wrapper {
   left: 0;
@@ -586,7 +473,7 @@ ul#page-stream {
   // maximum side width container
 
   .width-container {
-    width: 1026px; /* 1140px - 10% for margins */
+    width: 100%; /* 1140px - 10% for margins */
     margin: 0 auto;
   }
 

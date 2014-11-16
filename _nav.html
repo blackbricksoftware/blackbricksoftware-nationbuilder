@@ -23,3 +23,18 @@
     {% endfor %}
   </ul>
 </nav>
+{% comment %}
+<hr>
+	1: {{ site.root_nav_pages | json }}<br>
+	2: {{ site.root_nav_pages | size }}<br>
+	{% for child in site.root_nav_pages %}
+			<hr>
+			a: {{ child }}<br>
+			b: {{ child | json }}<br>
+			c: {{ child | size }}<br>
+			d: {{ child.name }}<br>
+			{% for item in child %}
+				z: {{ item[0] }}: {{ item[1] }}
+			{% endfor %}
+	{% endfor %}
+{% endcomment %}
