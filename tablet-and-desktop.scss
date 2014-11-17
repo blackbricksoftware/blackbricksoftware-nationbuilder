@@ -14,18 +14,17 @@ $headline-font: "Alegreya Sans SC", Helvetica, sans-serif;
 // main font
 $font: Helvetica, sans-serif;
 
-$theme-color-1: #be984f;
-$theme-color-2: #d7d7d7;
-$theme-color-3: #dc3d24;
-$theme-color-4: #575757;
+$theme-color-1: #9b59b6;
+$theme-color-2: #34495e;
+$theme-color-3: #1abc9c;
+$theme-color-4: #bdc3c7;
+
+// form input area focus color
+$theme-color-5: #ecf0f1;
 
 // general success and error colors
-$red: #b94a48;
-$green: #619114;
-
-// background images
-$background-texture: "body-fulvous.jpg";
-$header-texture: "header-fulvous.jpg";
+$red: #c0392b;
+$green: #2ecc71;
 
 // border-radius mixin
 @import "border_radius";
@@ -35,9 +34,6 @@ $header-texture: "header-fulvous.jpg";
 
 //compass css3 mixins
 @import "compass/css3";
-
-//mobile nav
-@import "mobile-nav";
 
 // container for header area
 .header-container {
@@ -53,10 +49,10 @@ $header-texture: "header-fulvous.jpg";
 
 .twocolumn-container {
   .left-column, .right-column-wide {
-    background-color: #fff;
+    //background-color: #fff;
     padding: 20px;
-    @include border-radius(5px);
-    border: 1px solid #ebebeb;
+    ////@include border-radius(5px);
+    //border: 1px solid #ebebeb;
     float: left;
     width: 68.2261208577%;
     // 710px ÷ 1026px
@@ -270,9 +266,9 @@ ul.membership-list {
 
 .page-features {
   position: relative;
-  margin: -30px 0 50px 0;
   .features-headline {
-    font-size: 20px;
+	position: absolute;
+    font-size: 45px;
     padding: 15px;
   }
 }
@@ -386,52 +382,9 @@ ul#page-stream {
 // Tablet only
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
-	#body {
-		padding: 50px 0;
+	.menu-link {
+	  display: block;
 	}
-
-// off canvas nav to be used on tablets, since drop downs don't work on touch devices
-
-  nav {
-    @include mobile-nav;
-    float: none;
-    margin: 0;
-    li {
-      margin: 0;
-      padding: 0;
-      @include border-radius(0);
-      line-height: 21px;
-      &.active, &.drop {
-        background-color: $theme-color-4;
-        border-bottom: 1px solid darken($theme-color-4, 15);
-      }
-      a {
-        padding: .8em;
-      }
-    }
-    .sub {
-      position: static;
-      width: 100%;
-      padding: 0;
-      li {
-        border-bottom: 1px solid darken($theme-color-4, 15);
-        background-color: darken($theme-color-4, 5);
-        &:last-child {
-          margin-bottom: 0;
-        }
-        a {
-          padding: 12px;
-        }
-        &.mobile-visible {
-          display: block;
-        }
-      }
-    }
-  }
-
-  .menu-link {
-    display: block;
-  }
 
 // javascript is used to wrap all iframes in a span called responsive-embed-wrapper to make them responsive.
 // once the iframe is wrapped in said span, it will be shown.
@@ -489,7 +442,7 @@ ul#page-stream {
       text-align: center;
       list-style: none;
       background-color: #f3f3f3;
-      @include border-radius(2px);
+      //@include border-radius(2px);
       padding: 15px;
       display: inline-block;
       margin: 0 10px 15px 0;

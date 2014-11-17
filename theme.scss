@@ -14,22 +14,20 @@ $headline-font: "Alegreya Sans SC", Helvetica, sans-serif;
 // main font
 $font: Helvetica, sans-serif;
 
-$theme-color-1: #be984f;
-$theme-color-2: #d7d7d7;
-$theme-color-3: #dc3d24;
-$theme-color-4: #575757;
+$theme-color-1: #9b59b6;
+$theme-color-2: #34495e;
+$theme-color-3: #1abc9c;
+$theme-color-4: #bdc3c7;
 
 // form input area focus color
-$theme-color-5: rgba(220, 61, 36, 0.6);
+$theme-color-5: #ecf0f1;
 
 // general success and error colors
-$red: #b94a48;
-$green: #619114;
+$red: #c0392b;
+$green: #2ecc71;
 
 // background images
-$background-texture: "body-fulvous.jpg";
-$header-texture: "header-fulvous.jpg";
-$header-color: #363636;
+$header-color: #f1c40f;
 
 //* main responsive components *//
 
@@ -67,9 +65,6 @@ $header-color: #363636;
 
 // progress bar
 @import "progress-bar";
-
-// mobile nav
-@import "mobile-nav";
 
 // styles for new features
 @import "updates";
@@ -178,7 +173,7 @@ img {
 }
 
 body {
-  background: url($background-texture) repeat $theme-color-2;
+  background: $theme-color-2;
   margin: 0;
   font: 15px/21px $font;
   color: #505054;
@@ -237,7 +232,7 @@ body {
 // style an image with rounded corners
 
 .img-rounded {
-  @include border-radius(6px);
+  //@include border-radius(6px);
 }
 
 // style an image with a sublte frame
@@ -255,7 +250,7 @@ body {
 // style an image as a circle
 
 .img-circle {
-  @include border-radius(500px);
+  //@include border-radius(500px);
 }
 
 // add padding around an image
@@ -305,7 +300,7 @@ body {
   margin: 0 0 20px;
   list-style: none;
   background-color: #f5f5f5;
-  @include border-radius(4px);
+  //@include border-radius(4px);
 }
 
 .breadcrumbs > li {
@@ -344,10 +339,7 @@ header {
 
 .site-logo {
   header, header.splash {
-    float: left;
-    text-align: left;
-    padding: 0 0 20px 0;
-    margin-left: 0;
+	padding: 0 10px 10px 0;
     img {
       width: $menu-open-width*$menu-logo-porportion;
       max-width: none;
@@ -376,13 +368,14 @@ header.splash {
   padding: 10px;
   position: absolute;
   top: 10px;
-  right: 5%;
+  right: 2%;
+  z-index: 20;
 }
 
 .menu-link {
 /*
   background-color: $theme-color-3;
-  @include border-radius(2px);
+  //@include border-radius(2px);
 */
   .fa {
     color: $theme-color-4;
@@ -390,23 +383,16 @@ header.splash {
   }
 }
 
-// off canvas mobile nav
-
-/*
-nav {
-  @include mobile-nav;
-}
-*/
-
 // page layout if the sidebar is turned on
 
 .twocolumn-container {
-  margin-top: 0;
+  width: 100%;
+  margin: 0 auto;
   .left-column, .right-column-wide {
-    background-color: #fff;
+    // background-color: #fff;
     padding: 20px;
-    @include border-radius(5px);
-    border: 1px solid #ebebeb;
+    // //@include border-radius(5px);
+    // border: 1px solid #ebebeb;
     margin-bottom: 15px;
   }
   .right-column, .left-column-narrow {
@@ -416,22 +402,24 @@ nav {
 
 // page layout if the sidebar is turned off
 
-/*
 .onecolumn-container {
-  background-color: #fff;
+  //background-color: #fff;
   padding: 20px;
-  @include border-radius(5px);
-  border: 1px solid #ebebeb;
+  ////@include border-radius(5px);
+  //border: 1px solid #ebebeb;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-*/
+.onecolumn-container {
+	width: 100%%;
+	margin: 0 auto;
+}
 
 // supporter photo shown in supporter nav and user profile
 
 .supporter-pic {
-  @include border-radius(5px);
-  @include border-radius-top-left(7px); // hides background behind image
+  //@include border-radius(5px);
+  //@include border-radius-top-left(7px); // hides background behind image
   background-color: #fff;
   border: 1px solid #ebebeb;
   margin-bottom: 15px;
@@ -452,13 +440,13 @@ nav {
     display: block;
   }
   img {
-    @include border-radius-top-left(5px);
-    @include border-radius-bottom-left(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-bottom-left(5px);
     max-width: 100%;
   }
   .pc {
     display: block;
-    @include border-radius-bottom-left(5px);
+    //@include border-radius-bottom-left(5px);
     font-size: 11px;
     line-height: 20px;
     background-color: $theme-color-3;
@@ -501,8 +489,8 @@ nav {
     height: 100%;
   }
   img {
-    @include border-radius-top-left(5px);
-    @include border-radius-bottom-left(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-bottom-left(5px);
     max-width: 100%;
   }
 }
@@ -512,8 +500,8 @@ nav {
   min-height: 48px;
   padding: 1%;
   line-height: 16px;
-  @include border-radius-top-right(5px);
-  @include border-radius-bottom-right(5px);
+  //@include border-radius-top-right(5px);
+  //@include border-radius-bottom-right(5px);
   border: 1px solid #ebebeb;
   .byline {
     margin: 3px 0;
@@ -529,7 +517,7 @@ nav {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 15px;
-  @include border-radius(5px);
+  //@include border-radius(5px);
   border: 1px solid #ebebeb;
   &:last-child {
     margin-bottom: 0;
@@ -547,8 +535,8 @@ nav {
     -moz-box-shadow: none;
     -webkit-appearance: none;
     width: 73%; 
-    @include border-radius-top-right(0px);
-    @include border-radius-bottom-right(0px);
+    //@include border-radius-top-right(0px);
+    //@include border-radius-bottom-right(0px);
     border-right: 0;
     display: inline-block;
   }
@@ -557,8 +545,8 @@ nav {
     position: relative;
     top: -5px;
     width: 27%; // 81 by 300
-    @include border-radius-top-left(0px);
-    @include border-radius-bottom-left(0px);
+    //@include border-radius-top-left(0px);
+    //@include border-radius-bottom-left(0px);
 
     &.disabled {
       opacity: 0.45;
@@ -585,7 +573,7 @@ nav {
     font-size: 14px;
     list-style: none;
     padding-bottom: 15px;
-    border-bottom: 1px solid white;
+    //border-bottom: 1px solid white;
     [class^="icon-"] {
       display: none;
     }
@@ -604,7 +592,7 @@ nav {
       }
     }
     &:first-child {
-      border-top: 1px solid white;
+      //border-top: 1px solid white;
     }
     a {
       font-weight: bold;
@@ -688,10 +676,10 @@ ul#page-stream {
     }
     .form-wrap {
       .answer-wrap {
-        background-color: darken(#f3f3f3, 5);
+        //background-color: darken(#f3f3f3, 5);
       }
       .icon-up-dir:before {
-        color: darken(#f3f3f3, 5);
+        //color: darken(#f3f3f3, 5);
       }
     }
   }
@@ -709,8 +697,8 @@ ul#page-stream {
 // container which wraps all reactions to a page
 
 .reaction-wrap {
-  background-color: #f3f3f3;
-  @include border-radius(5px);
+  //background-color: #f3f3f3;
+  //@include border-radius(5px);
 }
 
 // list of events on calendar page
@@ -725,7 +713,7 @@ ul#page-stream {
     background-color: #f3f3f3;
     padding: 15px;
     margin-bottom: 15px;
-    @include border-radius(2px);
+    //@include border-radius(2px);
     border-bottom: 2px solid $theme-color-3;
 
     &:last-child {
@@ -802,7 +790,7 @@ ul#page-stream {
   position: fixed;
   left: 0;
   top: 0;
-  background: url($header-texture) repeat $header-color;
+  background: $header-color;
   @include transition(all 0.3s ease-out);
   z-index: 10;
   overflow-x: hidden;
@@ -814,6 +802,7 @@ ul#page-stream {
 }
 .header-container:hover {
   width: $menu-open-width;
+  max-width: 80%;
 }
 
 // container for the entire main area
@@ -828,7 +817,7 @@ ul#page-stream {
 footer {
   background-color: #fff;
   padding: 20px;
-  @include border-radius(5px);
+  //@include border-radius(5px);
   border: 1px solid #ebebeb;
   .footer-text p {
     margin: 0;
@@ -886,7 +875,7 @@ nav, .subnav {
       padding: 0 0 0 50px;
       .fa {
 		position: absolute;
-		left: 8px;
+		left: 11px;
 		top: 50%;
 		transform: translate(0,-50%);
 	  }
@@ -910,9 +899,9 @@ nav, .subnav {
     z-index: 99999;
     background-color: $theme-color-3;
     padding: 8px 0 5px 0;
-    @include border-radius-top-right(2px);
-    @include border-radius-bottom-left(2px);
-    @include border-radius-bottom-right(2px);
+    //@include border-radius-top-right(2px);
+    //@include border-radius-bottom-left(2px);
+    //@include border-radius-bottom-right(2px);
     width: 200px;
     display: none;
   }
@@ -925,7 +914,7 @@ nav, .subnav {
     display: block;
     background-color: $theme-color-3;
     border-color:transparent;
-    @include border-radius(0);
+    //@include border-radius(0);
 
     &.mobile-visible {
       display: none;
@@ -974,13 +963,13 @@ nav, .subnav {
       border-left: 3px solid $theme-color-3;
     }
     &:first-child {
-      @include border-radius-top-left(5px);
-      @include border-radius-top-right(5px);
+      //@include border-radius-top-left(5px);
+      //@include border-radius-top-right(5px);
     }
     &:last-child {
       margin-bottom: 15px;
-      @include border-radius-bottom-left(5px);
-      @include border-radius-bottom-right(5px);
+      //@include border-radius-bottom-left(5px);
+      //@include border-radius-bottom-right(5px);
     }
     &:hover {
       border-left: 3px solid $theme-color-3;
@@ -1049,7 +1038,7 @@ nav, .subnav {
       color: black;
       text-transform: capitalize;
       background-color: $theme-color-2;
-      @include border-radius(2px);
+      //@include border-radius(2px);
     }
   }
   li a:hover {
@@ -1259,7 +1248,7 @@ small {
   font-size: 11px;
   color: white;
   padding: 2px 5px;
-  @include border-radius(2px);
+  //@include border-radius(2px);
   white-space: nowrap;
   a {
     color: white;
@@ -1293,7 +1282,7 @@ ul.membership-list {
     text-align: center;
     list-style: none;
     background-color: #f3f3f3;
-    @include border-radius(2px);
+    //@include border-radius(2px);
     padding: 15px;
     display: inline-block;
     margin: 0 10px 15px 0;
@@ -1360,7 +1349,7 @@ ul.membership-list {
 // answers on faq pages
 
 .answer-wrap {
-  @include border-radius(2px);
+  //@include border-radius(2px);
   background-color: #f3f3f3;
   padding: 15px;
   width: 100%;
@@ -1431,8 +1420,8 @@ ul.membership-list {
 .flash-share {
   margin: 0 0 25px 0;
   .h3 {
-    @include border-radius-top-left(5px);
-    @include border-radius-top-right(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-top-right(5px);
     font-size: 24px;
     font-family: $headline-font;
     background-color: $theme-color-3;
@@ -1441,10 +1430,10 @@ ul.membership-list {
     margin: 0;
   }
   .share {
-    @include border-radius-bottom-left(5px);
-    @include border-radius-bottom-right(5px);
-    @include border-radius-top-left(0);
-    @include border-radius-top-right(0);
+    //@include border-radius-bottom-left(5px);
+    //@include border-radius-bottom-right(5px);
+    //@include border-radius-top-left(0);
+    //@include border-radius-top-right(0);
     background-color: #f8f8f8;
     border-bottom: 2px solid $theme-color-3;
     padding: 15px 15px 0 15px;
@@ -1466,6 +1455,14 @@ ul.membership-list {
   &.active {
     .header-container { 
 		width: $menu-open-width;
+		max-width: 80%;
+		.site-logo {
+		  header, header.splash {
+			img {
+			  max-width: 100%;
+			}
+		  }
+		}
 	}
   }
 }
@@ -1476,7 +1473,7 @@ ul.membership-list {
   .onecolumn-container {
     background-color: transparent;
     padding: 0;
-    @include border-radius(0);
+    //@include border-radius(0);
     border: none;
     margin: 0;
   }
@@ -1556,7 +1553,7 @@ h4.expander-head {
     margin-bottom: 20px;
     background-color: #fcf8e3;
     border: 1px solid #fbeed5;
-    @include border-radius(2px);
+    //@include border-radius(2px);
   }
   .flash-message {
     display: inline-block;
@@ -1603,7 +1600,7 @@ h4.expander-head {
   .left-column {
     .supporter-pic-left {
       img, .pc {
-        @include border-radius(0px);
+        //@include border-radius(0px);
       }
     }
     .supporter-pic-right {
@@ -1747,7 +1744,6 @@ h4.expander-head {
 
 .page-features {
   position: relative;
-  margin: -30px 0 50px 0;
   .single-feature {
     display: block;
   }
@@ -1786,25 +1782,16 @@ h4.expander-head {
     }
   }
   .features-headline {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+	font-family: $headline-font;
+    //position: absolute;
+    left: 50%;
+    top: 30%;
     z-index: 2;
-    background: #333;
-    width: 100%;
     font-size: 14px;
     color: #fff;
     padding: 5px;
     display: block;
-    color: #fff;
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0) transparent;
-    /* RGBa with 0.6 opacity */
-    background: rgba(0, 0, 0, 0.6);
-    /* For IE 5.5 - 7*/
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    transform: translate(-50%,-50%);
   }
   // If you want labels to display beneath your images, remove display: none; below //
   .flex-control-paging {
@@ -1868,15 +1855,15 @@ h4.expander-head {
 
 .flex-prev {
   left: 0;
-  @include border-radius-top-right(2px);
-  @include border-radius-bottom-right(2px);
+  //@include border-radius-top-right(2px);
+  //@include border-radius-bottom-right(2px);
   border-left: 0;
 }
 
 .flex-next {
   right: 0;
-  @include border-radius-top-left(2px);
-  @include border-radius-bottom-left(2px);
+  //@include border-radius-top-left(2px);
+  //@include border-radius-bottom-left(2px);
   border-right: 0;
 }
 
@@ -1904,7 +1891,7 @@ h4.expander-head {
 
 .form-errors {
   background-color: $red;
-  @include border-radius(2px);
+  //@include border-radius(2px);
   color: #fff;
   font-size: 13px;
   line-height: 17px;
@@ -1929,7 +1916,7 @@ ul.homepage_excerpt-list {
     list-style: none;
     background: #f8f8f8;
     border-bottom: 2px solid $theme-color-3;
-    @include border-radius(2px);
+    //@include border-radius(2px);
     margin-bottom: 15px;
     padding: 25px 25px;
     overflow: hidden;
