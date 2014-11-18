@@ -3,8 +3,8 @@
 @mixin button(){
   cursor: pointer;
   display: inline-block;
-  background-color: $theme-color-3;
-  @include border-radius(2px);
+  background-color: $menu-hover-color;
+  //@include border-radius(2px);
   padding: 10px 15px;
   border: 0;
   font: 14px $font;
@@ -14,7 +14,7 @@
     color: #fff;
   }
   &:hover {
-    background-color: lighten($theme-color-3, 5);
+    background-color: lighten($menu-hover-color, 5);
   }
 }
 
@@ -46,8 +46,8 @@
 .submit-link {
   cursor: pointer;
   border: 0;
-  background-color: $theme-color-3;
-  @include border-radius(2px);
+  background-color: $menu-hover-color;
+  //@include border-radius(2px);
   display: inline-block;
   color: white;
   font: 14px $font;
@@ -55,14 +55,14 @@
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: lighten($theme-color-3, 5);
+    background-color: lighten($menu-hover-color, 5);
   }
 }
 
 .neutral-link {
-  background-color: $theme-color-1;
+  background-color: $menu-item-color;
   &:hover {
-    background-color: lighten($theme-color-1, 5);
+    background-color: lighten($menu-item-color, 5);
   }
 }
 
@@ -74,7 +74,7 @@
   padding: 5px;
   min-height: auto;
   font-size: 11px;
-  @include border-radius(0px);
+  //@include border-radius(0px);
 }
 
 // read more link

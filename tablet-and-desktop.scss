@@ -3,28 +3,9 @@
    For the mobile first stylesheet which applies to all screen widths, see theme.scss.
    =================================================================================== */
 
-//* imports *//
-@import "settings";
-
 //* style variables *//
 
-// headline font
-$headline-font: "Alegreya Sans SC", Helvetica, sans-serif;
-
-// main font
-$font: Helvetica, sans-serif;
-
-$theme-color-1: #9b59b6;
-$theme-color-2: #34495e;
-$theme-color-3: #1abc9c;
-$theme-color-4: #bdc3c7;
-
-// form input area focus color
-$theme-color-5: #ecf0f1;
-
-// general success and error colors
-$red: #c0392b;
-$green: #2ecc71;
+@import "variables";
 
 // border-radius mixin
 @import "border_radius";
@@ -51,7 +32,7 @@ $green: #2ecc71;
   .left-column, .right-column-wide {
     //background-color: #fff;
     padding: 20px;
-    ////@include border-radius(5px);
+    //////@include border-radius(5px);
     //border: 1px solid #ebebeb;
     float: left;
     width: 68.2261208577%;
@@ -263,13 +244,23 @@ ul.membership-list {
 }
 
 // featured content slider
-
 .page-features {
-  position: relative;
+/*
+	padding-left: $menu-width;
+  position: fixed;
+  top: 0;
+  left: 0;
+*/
   .features-headline {
 	position: absolute;
-    font-size: 45px;
-    padding: 15px;
+	left: 50%;
+	top: 15%;
+	z-index: 2;
+	font-size: 60pt;
+	padding: 15px;
+	line-height: 1;
+	transform: translate(-50%,-50%);
+	background: none;
   }
 }
 
@@ -442,7 +433,7 @@ ul#page-stream {
       text-align: center;
       list-style: none;
       background-color: #f3f3f3;
-      //@include border-radius(2px);
+      ////@include border-radius(2px);
       padding: 15px;
       display: inline-block;
       margin: 0 10px 15px 0;

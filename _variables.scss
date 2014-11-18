@@ -1,28 +1,28 @@
 //* theme style specific variables *//
 
+// font includes
+@import url(//fonts.googleapis.com/css?family=Alegreya+Sans+SC:500);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+// menu settings
+$menu-width: 50px;
+$menu-open-width: 250px;
+$menu-logo-porportion: 1.0;
+
 // headline font
-$headline-font: "chaparral-pro", Helvetica, sans-serif;
+$headline-font: "Alegreya Sans SC", Helvetica, sans-serif;
 
 // main font
-$font: "proxima-nova", sans-serif;
+$font: Helvetica, sans-serif;
 
-// orange
-$theme-color-1: #b85812;
-
-// off white orange
-$theme-color-2: #e0d6c8;
-
-// light green
-$theme-color-3: #7ba329;
-
-// dark green
-$theme-color-4: #516e16;
+$menu-color: #d35400;
+$menu-item-color: #e67e22;
+$menu-active-color: #f39c12;
+$menu-hover-color: #f1c40f;
+$theme-color-4: #2c3e50;
+$theme-color-5: #bdc3c7;
+$theme-color-6: #7f8c8d;
 
 // general success and error colors
-$red: #b94a48;
-$green: #619114;
-
-// background images
-
-$background-texture: "paper.jpg";
-$header-texture: "header-green.jpg";
+$red: #c0392b;
+$green: #27ae60;
