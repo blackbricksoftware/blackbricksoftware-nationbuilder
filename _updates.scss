@@ -162,7 +162,7 @@ ol.CodeRay li { white-space: pre }
     height: 68px;
     @include box-sizing(border-box);
     padding: 10px 7px 10px 10px;
-    border-left: 3px solid $menu-hover-color;
+    border-left: 3px solid $menu-hover;
     position: relative;
     @include border-radius(2px);
     img {

@@ -3,7 +3,7 @@
 @mixin button(){
   cursor: pointer;
   display: inline-block;
-  background-color: $menu-hover-color;
+  background-color: $menu-hover;
   //@include border-radius(2px);
   padding: 10px 15px;
   border: 0;
@@ -14,7 +14,7 @@
     color: #fff;
   }
   &:hover {
-    background-color: lighten($menu-hover-color, 5);
+    background-color: lighten($menu-hover, 5);
   }
 }
 
@@ -46,7 +46,7 @@
 .submit-link {
   cursor: pointer;
   border: 0;
-  background-color: $menu-hover-color;
+  background-color: $menu-hover;
   //@include border-radius(2px);
   display: inline-block;
   color: white;
@@ -55,14 +55,14 @@
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: lighten($menu-hover-color, 5);
+    background-color: lighten($menu-hover, 5);
   }
 }
 
 .neutral-link {
-  background-color: $menu-item-color;
+  background-color: $menu-item;
   &:hover {
-    background-color: lighten($menu-item-color, 5);
+    background-color: lighten($menu-item, 5);
   }
 }
 

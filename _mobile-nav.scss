@@ -15,8 +15,8 @@
     list-style: none;
     font-size: 15px;
     display: block;
-    border-bottom: 1px solid darken($theme-color-4, 15);
-    background-color: $theme-color-4;
+    border-bottom: 1px solid darken($light-gray, 15);
+    background-color: $light-gray;
     a {
       display: block;
       padding: 0.8em;
@@ -26,7 +26,7 @@
   .sub {
     display: none;
     li {
-      background-color: darken($theme-color-4, 5);
+      background-color: darken($light-gray, 5);
       &:last-child {
         border-bottom: none;
       }

@@ -1,5 +1,5 @@
 /* ============================================================================
-   This is a mobile first stylesheet and it applies to all screen widths.  Invalid CSS after " background:": expected pseudoclass or pseudoelement, was " $menu-active-color;"
+   This is a mobile first stylesheet and it applies to all screen widths.  Invalid CSS after " background:": expected pseudoclass or pseudoelement, was " $menu-active;"
    For changes to the desktop or tablet viewports, see tablet-and-desktop.scss.
    ============================================================================ */
 
@@ -120,7 +120,7 @@ h6 {
 // general link styles
 
 a {
-  color: $menu-item-color;
+  color: $menu-item;
   text-decoration: none;
   outline: none;
 }
@@ -151,7 +151,7 @@ img {
 }
 
 body {
-  background: $menu-active-color;
+  background: $menu-active;
   margin: 0;
   font: 15px/21px $font;
   color: #505054;
@@ -204,13 +204,13 @@ body {
 .activation-message {
   font-weight: bold;
   font-size: 18px;
-  color: $menu-hover-color;
+  color: $menu-hover;
 }
 
 // style an image with rounded corners
 
 .img-rounded {
-  ////@include border-radius(6px);
+  //@include border-radius(6px);
 }
 
 // style an image with a sublte frame
@@ -228,7 +228,7 @@ body {
 // style an image as a circle
 
 .img-circle {
-  ////@include border-radius(500px);
+  //@include border-radius(500px);
 }
 
 // add padding around an image
@@ -278,7 +278,7 @@ body {
   margin: 0 0 20px;
   list-style: none;
   background-color: #f5f5f5;
-  ////@include border-radius(4px);
+  //@include border-radius(4px);
 }
 
 .breadcrumbs > li {
@@ -352,11 +352,11 @@ header.splash {
 
 .menu-link {
 /*
-  background-color: $menu-hover-color;
-  ////@include border-radius(2px);
+  background-color: $menu-hover;
+  //@include border-radius(2px);
 */
   .fa {
-    color: $theme-color-4;
+    color: $light-gray;
     font-size: 18px;
   }
 }
@@ -369,7 +369,7 @@ header.splash {
   .left-column, .right-column-wide {
     // background-color: #fff;
     padding: 20px;
-    // ////@include border-radius(5px);
+    // //@include border-radius(5px);
     // border: 1px solid #ebebeb;
     margin-bottom: 15px;
   }
@@ -384,7 +384,7 @@ header.splash {
 .onecolumn-container {
   //background-color: #fff;
   padding: 20px;
-  //////@include border-radius(5px);
+  ////@include border-radius(5px);
   //border: 1px solid #ebebeb;
   margin-top: 0;
   margin-bottom: 15px;
@@ -397,8 +397,8 @@ header.splash {
 // supporter photo shown in supporter nav and user profile
 
 .supporter-pic {
-  ////@include border-radius(5px);
-  ////@include border-radius-top-left(7px); // hides background behind image
+  //@include border-radius(5px);
+  //@include border-radius-top-left(7px); // hides background behind image
   background-color: #fff;
   border: 1px solid #ebebeb;
   margin-bottom: 15px;
@@ -419,16 +419,16 @@ header.splash {
     display: block;
   }
   img {
-    ////@include border-radius-top-left(5px);
-    ////@include border-radius-bottom-left(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-bottom-left(5px);
     max-width: 100%;
   }
   .pc {
     display: block;
-    ////@include border-radius-bottom-left(5px);
+    //@include border-radius-bottom-left(5px);
     font-size: 11px;
     line-height: 20px;
-    background-color: $menu-hover-color;
+    background-color: $menu-hover;
     color: white;
     padding: 0;
     border: 0;
@@ -468,8 +468,8 @@ header.splash {
     height: 100%;
   }
   img {
-    ////@include border-radius-top-left(5px);
-    ////@include border-radius-bottom-left(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-bottom-left(5px);
     max-width: 100%;
   }
 }
@@ -479,8 +479,8 @@ header.splash {
   min-height: 48px;
   padding: 1%;
   line-height: 16px;
-  ////@include border-radius-top-right(5px);
-  ////@include border-radius-bottom-right(5px);
+  //@include border-radius-top-right(5px);
+  //@include border-radius-bottom-right(5px);
   border: 1px solid #ebebeb;
   .byline {
     margin: 3px 0;
@@ -496,7 +496,7 @@ header.splash {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 15px;
-  ////@include border-radius(5px);
+  //@include border-radius(5px);
   border: 1px solid #ebebeb;
   &:last-child {
     margin-bottom: 0;
@@ -514,8 +514,8 @@ header.splash {
     -moz-box-shadow: none;
     -webkit-appearance: none;
     width: 73%; 
-    ////@include border-radius-top-right(0px);
-    ////@include border-radius-bottom-right(0px);
+    //@include border-radius-top-right(0px);
+    //@include border-radius-bottom-right(0px);
     border-right: 0;
     display: inline-block;
   }
@@ -524,8 +524,8 @@ header.splash {
     position: relative;
     top: -5px;
     width: 27%; // 81 by 300
-    ////@include border-radius-top-left(0px);
-    ////@include border-radius-bottom-left(0px);
+    //@include border-radius-top-left(0px);
+    //@include border-radius-bottom-left(0px);
 
     &.disabled {
       opacity: 0.45;
@@ -678,7 +678,7 @@ ul#page-stream {
 
 .reaction-wrap {
   background: none;
-  ////@include border-radius(5px);
+  //@include border-radius(5px);
 }
 
 // list of events on calendar page
@@ -693,8 +693,8 @@ ul#page-stream {
     background-color: #f3f3f3;
     padding: 15px;
     margin-bottom: 15px;
-    ////@include border-radius(2px);
-    border-bottom: 2px solid $menu-hover-color;
+    //@include border-radius(2px);
+    border-bottom: 2px solid $menu-hover;
 
     &:last-child {
       margin-bottom: 0;
@@ -788,7 +788,7 @@ ul#page-stream {
 // container for the entire main area
 
 .main-container {
-	background: $menu-active-color;
+	background: $light-gray;
 	position: relative;
 }
 
@@ -796,10 +796,8 @@ ul#page-stream {
 // site wide footer
 
 footer {
-  background-color: #fff;
+  background-color: #medium-gray;
   padding: 20px;
-  ////@include border-radius(5px);
-  border: 1px solid #ebebeb;
   .footer-text p {
     margin: 0;
   }
@@ -843,14 +841,14 @@ nav, .subnav {
     display: inline-block;
     margin: 0 0 10px 0;
     position: relative;
-    background: $theme-color-4;
+    background: $menu-item;
     line-height: 55px;
     width: 100%;
     a {
       display: block;
       width: 100%;
       height: 100%;
-      color: $menu-active-color;
+      color: #fff;
       padding: 0 0 0 50px;
       .fa {
 		position: absolute;
@@ -862,14 +860,14 @@ nav, .subnav {
     &:last-child {
       margin-right: 0;
     }
-    &:hover {
-      background-color: $theme-color-6;
+    &.active {
+      background-color: $menu-active;
       a {
         color: #fff;
       }
     }
-    &.active {
-      background-color: $theme-color-6;
+    &:hover {
+      background-color: $menu-hover;
       a {
         color: #fff;
       }
@@ -881,7 +879,7 @@ nav, .subnav {
     top: 54px;
     left: -1px;
     z-index: 99999;
-    background-color: $menu-hover-color;
+    background-color: $menu-hover;
     padding: 8px 0 5px 0;
     width: 200px;
     display: none;
@@ -889,11 +887,11 @@ nav, .subnav {
   .sub li {
     width: 100%;
     border: none;
-    color: $menu-active-color;
+    color: $menu-active;
     font-size: 13px;
     line-height: 18px;
     display: block;
-    background-color: $menu-hover-color;
+    background-color: $menu-hover;
     border-color:transparent;
 
     &.mobile-visible {
@@ -905,7 +903,7 @@ nav, .subnav {
     padding: 5px 20px 5px 22px;
 
     &:hover {
-      background-color: darken($menu-hover-color, 10);
+      background-color: darken($menu-hover, 10);
       text-decoration: none;
     }
   }
@@ -936,19 +934,19 @@ nav, .subnav {
     background: #fff;
     margin-bottom: 1px;
     i, span {
-      color: darken($menu-item-color, 10);
+      color: darken($menu-item, 10);
     }
     &.on {
-      border-left: 3px solid $menu-hover-color;
+      border-left: 3px solid $menu-hover;
     }
     &:first-child {
-      ////@include border-radius-top-left(5px);
-      ////@include border-radius-top-right(5px);
+      //@include border-radius-top-left(5px);
+      //@include border-radius-top-right(5px);
     }
     &:last-child {
       margin-bottom: 15px;
-      ////@include border-radius-bottom-left(5px);
-      ////@include border-radius-bottom-right(5px);
+      //@include border-radius-bottom-left(5px);
+      //@include border-radius-bottom-right(5px);
     }
     &:hover {
       font-weight: bold;      
@@ -1016,16 +1014,16 @@ nav, .subnav {
       text-decoration: none;
       color: black;
       text-transform: capitalize;
-      background-color: $menu-active-color;
-      ////@include border-radius(2px);
+      background-color: $menu-active;
+      //@include border-radius(2px);
     }
   }
   li a:hover {
-    background-color: darken($menu-active-color, 10);
+    background-color: darken($menu-active, 10);
   }
   li.current a, li.current a:hover {
     color: #fff;
-    background-color: $menu-item-color;
+    background-color: $menu-item;
   }
 }
 
@@ -1065,7 +1063,7 @@ nav, .subnav {
 // political/social capital displayed next to names
 
 .pc {
-  background-color: $menu-active-color;
+  background-color: $menu-active;
   color: #000;
   padding: 2px 5px;
   font-size: 10px;
@@ -1162,7 +1160,7 @@ small {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: $menu-hover-color;
+    background-color: $menu-hover;
     font-size: 10px;
     line-height: 17px;
     padding: 0 5px;
@@ -1223,11 +1221,11 @@ small {
 
 .page-tag {
   text-indent: 40px;
-  background-color: $menu-item-color;
+  background-color: $menu-item;
   font-size: 11px;
   color: white;
   padding: 2px 5px;
-  ////@include border-radius(2px);
+  //@include border-radius(2px);
   white-space: nowrap;
   a {
     color: white;
@@ -1261,7 +1259,7 @@ ul.membership-list {
     text-align: center;
     list-style: none;
     background-color: #f3f3f3;
-    ////@include border-radius(2px);
+    //@include border-radius(2px);
     padding: 15px;
     display: inline-block;
     margin: 0 10px 15px 0;
@@ -1296,7 +1294,7 @@ ul.membership-list {
     float: left;
     text-align: center;
     color: #4d4d4d;
-    background-color: lighten($menu-active-color, 10);
+    background-color: lighten($menu-active, 10);
     margin-right: 0;
     margin-bottom: 10px;
     min-height: 50px;
@@ -1328,7 +1326,7 @@ ul.membership-list {
 // answers on faq pages
 
 .answer-wrap {
-  ////@include border-radius(2px);
+  //@include border-radius(2px);
   background-color: #f3f3f3;
   padding: 15px;
   width: 100%;
@@ -1399,22 +1397,22 @@ ul.membership-list {
 .flash-share {
   margin: 0 0 25px 0;
   .h3 {
-    ////@include border-radius-top-left(5px);
-    ////@include border-radius-top-right(5px);
+    //@include border-radius-top-left(5px);
+    //@include border-radius-top-right(5px);
     font-size: 24px;
     font-family: $headline-font;
-    background-color: $menu-hover-color;
+    background-color: $menu-hover;
     color: white;
     padding: 15px;
     margin: 0;
   }
   .share {
-    ////@include border-radius-bottom-left(5px);
-    ////@include border-radius-bottom-right(5px);
-    ////@include border-radius-top-left(0);
-    ////@include border-radius-top-right(0);
+    //@include border-radius-bottom-left(5px);
+    //@include border-radius-bottom-right(5px);
+    //@include border-radius-top-left(0);
+    //@include border-radius-top-right(0);
     background-color: #f8f8f8;
-    border-bottom: 2px solid $menu-hover-color;
+    border-bottom: 2px solid $menu-hover;
     padding: 15px 15px 0 15px;
   }
 }
@@ -1452,7 +1450,7 @@ ul.membership-list {
   .onecolumn-container {
     background-color: transparent;
     padding: 0;
-    ////@include border-radius(0);
+    //@include border-radius(0);
     border: none;
     margin: 0;
   }
@@ -1495,7 +1493,7 @@ ul.membership-list {
   margin-top: 15px;
   padding: 15px;
   background-color: #f8f8f8;
-  border-left: 2px solid $menu-hover-color;
+  border-left: 2px solid $menu-hover;
 }
 
 // invoice page table
@@ -1532,7 +1530,7 @@ h4.expander-head {
     margin-bottom: 20px;
     background-color: #fcf8e3;
     border: 1px solid #fbeed5;
-    ////@include border-radius(2px);
+    //@include border-radius(2px);
   }
   .flash-message {
     display: inline-block;
@@ -1579,7 +1577,7 @@ h4.expander-head {
   .left-column {
     .supporter-pic-left {
       img, .pc {
-        ////@include border-radius(0px);
+        //@include border-radius(0px);
       }
     }
     .supporter-pic-right {
@@ -1765,7 +1763,7 @@ h4.expander-head {
   }
   .features-headline {
 	font-family: $headline-font;
-	background: $menu-item-color;
+	background: $menu-item;
     font-size: 14px;
     color: #fff;
     padding: 5px;
@@ -1799,7 +1797,7 @@ h4.expander-head {
       color: white;
     }
     .flex-active {
-      background-color: $menu-hover-color;
+      background-color: $menu-hover;
     }
   }
 }
@@ -1828,7 +1826,7 @@ h4.expander-head {
   z-index: 9999;
   font-size: 16px;
   padding: 15px 10px;
-  // background: $menu-hover-color;
+  // background: $menu-hover;
   color: white;
 }
 
@@ -1866,7 +1864,7 @@ h4.expander-head {
 
 .form-errors {
   background-color: $red;
-  ////@include border-radius(2px);
+  //@include border-radius(2px);
   color: #fff;
   font-size: 13px;
   line-height: 17px;
@@ -1890,8 +1888,8 @@ ul.homepage_excerpt-list {
   li.excerpt-block {
     list-style: none;
     background: #f8f8f8;
-    border-bottom: 2px solid $menu-hover-color;
-    ////@include border-radius(2px);
+    border-bottom: 2px solid $menu-hover;
+    //@include border-radius(2px);
     margin-bottom: 15px;
     padding: 25px 25px;
     overflow: hidden;
